@@ -20,7 +20,7 @@ MDV,Maldives,Asia,286000
 PSE,Palestine,Asia,3101000
 QAT,Qatar,Asia,599000
 HKG,HongKong,Asia,6782000
-MAC,Macao,Asia,473000
+MAC,Macao,Asia,473000 );
 
 Code,Country,Continent,Population
 CHN,China,Asia,1277558000
