@@ -1,6 +1,33 @@
-SELECT countries.country_name, countries.population, continents.continent_name
-FROM countries
-JOIN continents
-ON countries.continent_id = continents.continent_id
-WHERE continents.continent_name = 'Africa'
-ORDER BY countries.population DESC;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+    public static void main(String[] args) {
+        String region = "Asia"; // Change this to your desired region
+
+        // SQL query to select countries in the specified region ordered by population
+        String query = "SELECT name, population FROM countries WHERE region = ? ORDER BY population DESC";
+
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+             
+            // Set the region parameter
+            preparedStatement.setString(1, region);
+
+            // Execute the query
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Process the result set
+            System.out.println("Countries in " + region + " ordered by population:");
+            while (resultSet.next()) {
+                String countryName = resultSet.getString("name");
+                int population = resultSet.getInt("population");
+                System.out.println(countryName + ": " + population);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
