@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
         String region = "Asia"; // Change this to your desired region
 
         // SQL query to select countries in the specified region ordered by population
