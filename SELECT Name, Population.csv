@@ -1,4 +1,4 @@
 SELECT Name, Population
 FROM country
-WHERE Continent = 'Europe'
+WHERE Region = 'Eastern Africa'
 ORDER BY Population DESC;
