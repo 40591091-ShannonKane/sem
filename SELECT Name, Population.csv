@@ -1,5 +1,6 @@
-Code,Name,Country,Region,Population
-'ABW','Aruba','North America','Carribean','103000')'
-'AFG','Afghanistan','Asia','Southern and Central Asia','652090.00')'
-'AGO','Angola','Africa','Central Africa','1246700.00');
-
+SELECT countries.country_name, countries.population, continents.continent_name
+FROM countries
+JOIN continents
+ON countries.continent_id = continents.continent_id
+WHERE continents.continent_name = 'Africa'
+ORDER BY countries.population DESC;
