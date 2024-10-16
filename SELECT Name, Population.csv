@@ -1,3 +1,4 @@
 SELECT Name, Population
 FROM country
-WHERE Continent = 'Asia';
+WHERE Continent = 'Europe'
+ORDER BY Population DESC;
